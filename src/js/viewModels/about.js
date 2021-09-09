@@ -8,11 +8,19 @@
 /*
  * Your about ViewModel code goes here
  */
-define(['accUtils'],
- function(accUtils) {
+define(['knockout', 'accUtils', 'ojs/ojarraydataprovider', 'ojs/ojlabel', 'ojs/ojselectsingle'],
+ function(ko, accUtils, ArrayDataProvider) {
     function AboutViewModel() {
       // Below are a set of the ViewModel methods invoked by the oj-module component.
       // Please reference the oj-module jsDoc for additional information.
+
+      var types = [
+        { value: 'pie', label: 'Pie'},
+        { value: 'bar', label: 'Bar'}
+      ]
+
+      this.chartTypes = new ArrayDataProvider(types, { keyAttributes: 'value'});
+      this.val = ko.observable("pie");
 
       /**
        * Optional ViewModel method invoked after the View is inserted into the
@@ -23,8 +31,8 @@ define(['accUtils'],
        * after being disconnected.
        */
       this.connected = () => {
-        accUtils.announce('About page loaded.', 'assertive');
-        document.title = "About";
+        accUtils.announce('Information page loaded.', 'assertive');
+        document.title = "Information";
         // Implement further logic if needed
       };
 

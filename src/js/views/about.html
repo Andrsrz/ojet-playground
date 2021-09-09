@@ -4,8 +4,10 @@
  as shown at https://oss.oracle.com/licenses/upl/
  -->
 <div class="oj-hybrid-padding">
-  <h1>About Content Area</h1>
+  <h1>Information</h1>
   <div>
-      To change the content of this section, you will make edits to the about.html file located in the /js/views folder.
+      <oj-label for="basicSelect">Select Chart:</oj-label>
+      <oj-select-single id="basicSelect" style="max-width: 20em;" data="[[chartTypes]]" value="{{val}}">
+      </oj-select-single>
   </div>
 </div>
