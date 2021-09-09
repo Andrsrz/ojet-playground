@@ -8,19 +8,36 @@
 /*
  * Your about ViewModel code goes here
  */
-define(['knockout', 'accUtils', 'ojs/ojarraydataprovider', 'ojs/ojlabel', 'ojs/ojselectsingle'],
+define(['knockout', 'accUtils', 'ojs/ojarraydataprovider', 'ojs/ojlabel', 'ojs/ojselectsingle', 'ojs/ojchart'],
  function(ko, accUtils, ArrayDataProvider) {
     function AboutViewModel() {
       // Below are a set of the ViewModel methods invoked by the oj-module component.
       // Please reference the oj-module jsDoc for additional information.
 
-      var types = [
+      // Types objects to use on selector
+      let types = [
         { value: 'pie', label: 'Pie'},
         { value: 'bar', label: 'Bar'}
-      ]
+      ];
 
+      // Set types objects into array to use it
       this.chartTypes = new ArrayDataProvider(types, { keyAttributes: 'value'});
       this.val = ko.observable("pie");
+
+      // Dummy data to show on chart
+      let chartData = [
+        { "id": 0, "series": "Baseball", "group": "Group A", "value": 42 },
+        { "id": 1, "series": "Baseball", "group": "Group B", "value": 34 },
+        { "id": 2, "series": "Bicycling", "group": "Group A", "value": 55 },
+        { "id": 3, "series": "Bicycling", "group": "Group B", "value": 30 },
+        { "id": 4, "series": "Skiing", "group": "Group A", "value": 36 },
+        { "id": 5, "series": "Skiing", "group": "Group B", "value": 50 },
+        { "id": 6, "series": "Soccer", "group": "Group A", "value": 22 },
+        { "id": 7, "series": "Soccer", "group": "Group B", "value": 46 }
+      ];
+
+      // Set chart data objects into array to use it
+      this.chartDataProvider = new ArrayDataProvider(chartData, { keyAttributes: 'id'});
 
       /**
        * Optional ViewModel method invoked after the View is inserted into the
