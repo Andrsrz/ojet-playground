@@ -39,6 +39,10 @@ define(['knockout', 'accUtils', 'ojs/ojarraydataprovider', 'ojs/ojlabel', 'ojs/o
       // Set chart data objects into array to use it
       this.chartDataProvider = new ArrayDataProvider(chartData, { keyAttributes: 'id'});
 
+      // Color for p tag
+      this.color = 'purple';
+      this.customId = 'purple';
+
       /**
        * Optional ViewModel method invoked after the View is inserted into the
        * document DOM.  The application can put logic that requires the DOM being
