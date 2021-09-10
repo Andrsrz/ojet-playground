@@ -5,6 +5,11 @@
  -->
 <div class="oj-hybrid-padding">
   <h1>Information</h1>
+
+  <span>
+    <p :style.display="[[ 1 !== 1 ? '' : 'none' ]]">This content is hidden ?</p>
+  </span>
+
   <div>
       <oj-label for="basicSelect">Select Chart:</oj-label>
       <oj-select-single id="basicSelect" 
