@@ -8,7 +8,9 @@
 
   <span>
     <p :style.display="[[ 1 !== 1 ? '' : 'none' ]]">This content is hidden ?</p>
-    <p :style.color="[[color]]" :id="[[customId]]">This content has dynamic color from Model</p>
+    <p :style.color="[[color]]" :id="[[customId]]">
+      This content has dynamic color from Model and its id is <oj-bind-text value="[[customId]]"></oj-bind-text>
+    </p>
   </span>
 
   <div>
