@@ -8,8 +8,8 @@
 /*
  * Your about ViewModel code goes here
  */
-define(['knockout', 'accUtils', 'ojs/ojarraydataprovider', 'ojs/ojlabel', 'ojs/ojselectsingle', 'ojs/ojchart'],
- function(ko, accUtils, ArrayDataProvider) {
+define(['knockout', 'accUtils', 'ojs/ojarraydataprovider', 'ojs/ojhtmlutils', 'ojs/ojlabel', 'ojs/ojselectsingle', 'ojs/ojchart', 'ojs/ojbinddom'],
+ function(ko, accUtils, ArrayDataProvider, HtmlUtils) {
     function AboutViewModel() {
       // Below are a set of the ViewModel methods invoked by the oj-module component.
       // Please reference the oj-module jsDoc for additional information.
@@ -42,6 +42,12 @@ define(['knockout', 'accUtils', 'ojs/ojarraydataprovider', 'ojs/ojlabel', 'ojs/o
       // Color for p tag
       this.color = 'purple';
       this.customId = 'purple';
+
+      // HTML elements
+      this.config = {
+        view: HtmlUtils.stringToNodeArray("<h1>Content from config object</h1>"),
+        data: {}
+      };
 
       /**
        * Optional ViewModel method invoked after the View is inserted into the
