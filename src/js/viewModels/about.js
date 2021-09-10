@@ -49,6 +49,9 @@ define(['knockout', 'accUtils', 'ojs/ojarraydataprovider', 'ojs/ojhtmlutils', 'o
         data: {}
       };
 
+      // Class binding
+      this.pinkBox = 'pinkBox';
+
       /**
        * Optional ViewModel method invoked after the View is inserted into the
        * document DOM.  The application can put logic that requires the DOM being

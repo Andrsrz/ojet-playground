@@ -6,6 +6,11 @@
         This is where any of your application specific styles should be included
 */
 
+.pinkBox {
+  border: solid 5px;
+  border-color: pink;
+}
+
 .sendOffScreen {
   position: absolute;
   left: -10000px;
