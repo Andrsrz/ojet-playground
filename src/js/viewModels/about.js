@@ -8,7 +8,7 @@
 /*
  * Your about ViewModel code goes here
  */
-define(['knockout', 'accUtils', 'ojs/ojarraydataprovider', 'ojs/ojhtmlutils', 'ojs/ojlabel', 'ojs/ojselectsingle', 'ojs/ojchart', 'ojs/ojbinddom'],
+define(['knockout', 'accUtils', 'ojs/ojarraydataprovider', 'ojs/ojhtmlutils', 'ojs/ojlabel', 'ojs/ojselectsingle', 'ojs/ojchart', 'ojs/ojbinddom', 'my-dropdown-with-chart/loader'],
  function(ko, accUtils, ArrayDataProvider, HtmlUtils) {
     function AboutViewModel() {
       // Below are a set of the ViewModel methods invoked by the oj-module component.
