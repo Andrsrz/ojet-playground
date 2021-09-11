@@ -29,7 +29,7 @@ define(
 
         //  Set types objects into array to use it
         this.chartTypes = new ArrayDataProvider(types, { keyAttributes: 'value'});
-        this.val = ko.observable("pie");
+        this.val = context.properties.chartType ? ko.observable(context.properties.chartType) : ko.observable("pie");
 
         // Dummy data to show on chart
         let chartData = [
@@ -48,10 +48,6 @@ define(
 
         this.properties = context.properties;
         this.res = componentStrings['my-dropdown-with-chart'];
-        // Example for parsing context properties
-        // if (context.properties.name) {
-        //     parse the context properties here
-        // }
 
         //Once all startup and async activities have finished, relocate if there are any async activities
         this.busyResolve();
