@@ -6,29 +6,55 @@
 */
 'use strict';
 define(
-    ['knockout', 'ojL10n!./resources/nls/my-dropdown-with-chart-strings', 'ojs/ojcontext', 'ojs/ojknockout'], function (ko, componentStrings, Context) {
+    ['knockout', 
+    'ojL10n!./resources/nls/my-dropdown-with-chart-strings', 
+    'ojs/ojcontext',
+    'ojs/ojarraydataprovider', 
+    'ojs/ojknockout'], 
+    function (ko, componentStrings, Context, ArrayDataProvider) {
     
     function ExampleComponentModel(context) {
-        var self = this;
-        
         //At the start of your viewModel constructor
         var busyContext = Context.getContext(context.element).getBusyContext();
         var options = {"description": "Web Component Startup - Waiting for data"};
-        self.busyResolve = busyContext.addBusyState(options);
+        this.busyResolve = busyContext.addBusyState(options);
 
-        self.composite = context.element;
+        this.composite = context.element;
 
-        //Example observable
-        self.messageText = ko.observable('Hello from my-dropdown-with-chart');
-        self.properties = context.properties;
-        self.res = componentStrings['my-dropdown-with-chart'];
+        // Types objects to use on selector
+        let types = [
+          { value: 'pie', label: 'Pie'},
+          { value: 'bar', label: 'Bar'}
+        ];
+
+        //  Set types objects into array to use it
+        this.chartTypes = new ArrayDataProvider(types, { keyAttributes: 'value'});
+        this.val = ko.observable("pie");
+
+        // Dummy data to show on chart
+        let chartData = [
+          { "id": 0, "series": "Baseball", "group": "Group A", "value": 42 },
+          { "id": 1, "series": "Baseball", "group": "Group B", "value": 34 },
+          { "id": 2, "series": "Bicycling", "group": "Group A", "value": 55 },
+          { "id": 3, "series": "Bicycling", "group": "Group B", "value": 30 },
+          { "id": 4, "series": "Skiing", "group": "Group A", "value": 36 },
+          { "id": 5, "series": "Skiing", "group": "Group B", "value": 50 },
+          { "id": 6, "series": "Soccer", "group": "Group A", "value": 22 },
+          { "id": 7, "series": "Soccer", "group": "Group B", "value": 46 }
+        ];
+
+        // Set chart data objects into array to use it
+        this.chartDataProvider = new ArrayDataProvider(chartData, { keyAttributes: 'id'});
+
+        this.properties = context.properties;
+        this.res = componentStrings['my-dropdown-with-chart'];
         // Example for parsing context properties
         // if (context.properties.name) {
         //     parse the context properties here
         // }
 
         //Once all startup and async activities have finished, relocate if there are any async activities
-        self.busyResolve();
+        this.busyResolve();
     };
     
     //Lifecycle methods - uncomment and implement if necessary 
