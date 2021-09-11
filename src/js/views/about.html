@@ -4,8 +4,37 @@
  as shown at https://oss.oracle.com/licenses/upl/
  -->
 <div class="oj-hybrid-padding">
-  <h1>About Content Area</h1>
+  <h1>Information</h1>
+
+  <span>
+    <p :style.display="[[ 1 !== 1 ? '' : 'none' ]]">This content is hidden ?</p>
+    <p :style.color="[[color]]" :id="[[customId]]">
+      This content has dynamic color from Model and its id is <oj-bind-text value="[[customId]]"></oj-bind-text>
+    </p>
+    <oj-bind-dom config="{{config}}"></oj-bind-dom>
+    <span :class="[[pinkBox]]">This is a box</span>
+  </span>
+
   <div>
-      To change the content of this section, you will make edits to the about.html file located in the /js/views folder.
+      <oj-label for="basicSelect">Select Chart:</oj-label>
+      <oj-select-single id="basicSelect" 
+                        style="max-width: 20em;" 
+                        data="[[chartTypes]]" 
+                        value="{{val}}">
+      </oj-select-single>
+      <oj-chart id="barChart"
+                type="[[val]]"
+                data="[[chartDataProvider]]"
+                animation-on-display="auto"
+                animation-on-data-change="auto"
+                hover-behavior="dim"
+                style="max-width: 500px; width: 100%; height: 350px;">
+        <template slot='itemTemplate' data-oj-as='item'>
+          <oj-chart-item value="[[item.data.value]]"
+                         group-id="[[ [item.data.group] ]]"
+                         series-id="[[item.data.series]]">
+          </oj-chart-item>
+        </template>
+      </oj-chart>
   </div>
 </div>
