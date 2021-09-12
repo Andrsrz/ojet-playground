@@ -8,7 +8,15 @@
 /*
  * Your about ViewModel code goes here
  */
-define(['accUtils', 'ojs/ojhtmlutils', 'ojs/ojlabel', 'ojs/ojselectsingle', 'ojs/ojchart', 'ojs/ojbinddom', 'my-dropdown-with-chart/loader'],
+define(['accUtils', 
+        'ojs/ojhtmlutils', 
+        'ojs/ojlabel', 
+        'ojs/ojselectsingle', 
+        'ojs/ojchart', 
+        'ojs/ojbinddom', 
+        'my-dropdown-with-chart/loader', 
+        // 'jet-composites/demo-card/loader'
+      ],
  function(accUtils, HtmlUtils) {
     function AboutViewModel() {
       // Below are a set of the ViewModel methods invoked by the oj-module component.
@@ -26,6 +34,24 @@ define(['accUtils', 'ojs/ojhtmlutils', 'ojs/ojlabel', 'ojs/ojselectsingle', 'ojs
 
       // Class binding
       this.pinkBox = 'pinkBox';
+
+      // Flip card data
+      this.employees = [
+        {
+            name: "Deb Raphaely",
+            avatar: "../images/composites/debraphaely.png",
+            title: "Purchasing Director",
+            work: 5171278899,
+            email: "deb.raphaely@oracle.com",
+        },
+        {
+            name: "Adam Fripp",
+            avatar: null,
+            title: "IT Manager",
+            work: 6501232234,
+            email: "adam.fripp@oracle.com",
+        },
+      ];
 
       /**
        * Optional ViewModel method invoked after the View is inserted into the

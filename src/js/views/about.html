@@ -18,4 +18,16 @@
   <!-- JET component -->
   <my-dropdown-with-chart></my-dropdown-with-chart> <!-- Default Pie -->
   <my-dropdown-with-chart chart-type="bar"></my-dropdown-with-chart> <!-- With Attribute -->
+  <!-- Downloaded JET component -->
+  <oj-bind-for-each data="[[employees]]">
+    <template>
+      <!-- <demo-card class="oj-flex-item" 
+                 name="[[$current.data.name]]" 
+                 avatar="[[$current.data.avatar]]" 
+                 work-title="[[$current.data.title]]" 
+                 work-number="[[$current.data.work]]" 
+                 email="[[$current.data.email]]">
+      </demo-card>   -->
+    </template>
+  </oj-bind-for-each>
 </div>
