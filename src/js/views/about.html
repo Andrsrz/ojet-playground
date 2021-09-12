@@ -16,8 +16,14 @@
   </span>
 
   <!-- JET component -->
-  <my-dropdown-with-chart></my-dropdown-with-chart> <!-- Default Pie -->
-  <my-dropdown-with-chart chart-type="bar"></my-dropdown-with-chart> <!-- With Attribute -->
+  <div class="ojet-flex">
+    <my-dropdown-with-chart class="ojet-flex-item">
+      <span slot="toolbar">
+        <oj-button>Hello Slot</oj-button>
+      </span>
+    </my-dropdown-with-chart> <!-- Default Pie -->
+    <my-dropdown-with-chart class="ojet-flex-item" chart-type="bar"></my-dropdown-with-chart> <!-- With Attribute -->  
+  </div>
   <!-- Downloaded JET component -->
   <oj-bind-for-each data="[[employees]]">
     <template>

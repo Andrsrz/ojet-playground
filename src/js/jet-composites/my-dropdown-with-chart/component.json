@@ -17,6 +17,8 @@
 
   }, 
   "slots": {
-
+    "toolbar": {
+      "description": "Toolbar for working with chart."
+    }
   }
 }
