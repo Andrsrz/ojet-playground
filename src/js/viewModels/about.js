@@ -8,7 +8,8 @@
 /*
  * Your about ViewModel code goes here
  */
-define(['accUtils', 
+define(['knockout',
+        'accUtils', 
         'ojs/ojhtmlutils', 
         'ojs/ojlabel', 
         'ojs/ojselectsingle', 
@@ -17,7 +18,7 @@ define(['accUtils',
         'my-dropdown-with-chart/loader', 
         // 'jet-composites/demo-card/loader'
       ],
- function(accUtils, HtmlUtils) {
+ function(ko, accUtils, HtmlUtils) {
     function AboutViewModel() {
       // Below are a set of the ViewModel methods invoked by the oj-module component.
       // Please reference the oj-module jsDoc for additional information.
@@ -52,6 +53,13 @@ define(['accUtils',
             email: "adam.fripp@oracle.com",
         },
       ];
+
+      // Event Handler
+      this.currentChart = ko.observable();
+      this.chartTypeChangeListener = function(event){
+        this.currentChart(event.detail.value);
+        alert('type is now: ' + event.detail.value);
+      }
 
       /**
        * Optional ViewModel method invoked after the View is inserted into the

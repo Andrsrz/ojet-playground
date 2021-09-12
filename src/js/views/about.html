@@ -16,13 +16,21 @@
   </span>
 
   <!-- JET component -->
-  <div class="ojet-flex">
-    <my-dropdown-with-chart class="ojet-flex-item">
+  <div class="oj-flex">
+    <my-dropdown-with-chart class="oj-flex-item">
       <span slot="toolbar">
         <oj-button>Hello Slot</oj-button>
       </span>
     </my-dropdown-with-chart> <!-- Default Pie -->
-    <my-dropdown-with-chart class="ojet-flex-item" chart-type="bar"></my-dropdown-with-chart> <!-- With Attribute -->  
+    <my-dropdown-with-chart
+      class="oj-flex-item"
+      chart-type="bar"
+      on-chart-type-changed="[[chartTypeChangeListener]]"
+    >
+      <span slot='toolbar'>
+        <h3><oj-bind-text value="[[currentChart]]"></oj-bind-text></h3>
+      </span>
+    </my-dropdown-with-chart> <!-- With Attribute -->  
   </div>
   <!-- Downloaded JET component -->
   <oj-bind-for-each data="[[employees]]">
