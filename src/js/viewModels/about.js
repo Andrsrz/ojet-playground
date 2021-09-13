@@ -16,7 +16,7 @@ define(['knockout',
         'ojs/ojchart', 
         'ojs/ojbinddom', 
         'my-dropdown-with-chart/loader', 
-        // 'jet-composites/demo-card/loader'
+        'demo-card-2/loader'
       ],
  function(ko, accUtils, HtmlUtils) {
     function AboutViewModel() {
