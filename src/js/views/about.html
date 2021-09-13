@@ -15,26 +15,35 @@
     <span :class="[[pinkBox]]">This is a box</span>
   </span>
 
-  <div>
-      <oj-label for="basicSelect">Select Chart:</oj-label>
-      <oj-select-single id="basicSelect" 
-                        style="max-width: 20em;" 
-                        data="[[chartTypes]]" 
-                        value="{{val}}">
-      </oj-select-single>
-      <oj-chart id="barChart"
-                type="[[val]]"
-                data="[[chartDataProvider]]"
-                animation-on-display="auto"
-                animation-on-data-change="auto"
-                hover-behavior="dim"
-                style="max-width: 500px; width: 100%; height: 350px;">
-        <template slot='itemTemplate' data-oj-as='item'>
-          <oj-chart-item value="[[item.data.value]]"
-                         group-id="[[ [item.data.group] ]]"
-                         series-id="[[item.data.series]]">
-          </oj-chart-item>
-        </template>
-      </oj-chart>
+  <!-- JET component -->
+  <div class="oj-flex">
+    <my-dropdown-with-chart class="oj-flex-item">
+      <span slot="toolbar">
+        <oj-button>Hello Slot</oj-button>
+      </span>
+    </my-dropdown-with-chart> <!-- Default Pie -->
+    <my-dropdown-with-chart
+      class="oj-flex-item"
+      chart-type="bar"
+    >
+    </my-dropdown-with-chart> <!-- With Attribute -->  
   </div>
+  
+  <!-- 
+    Downloaded JET component
+    I had to create a new component from the cli and copied
+    the files to be exactly as the one that I downloaded
+    otherwise doesn't work
+  -->
+  <oj-bind-for-each data="[[employees]]">
+    <template>
+      <demo-card-2 class="oj-flex-item" 
+                 name="[[$current.data.name]]" 
+                 avatar="[[$current.data.avatar]]" 
+                 work-title="[[$current.data.title]]" 
+                 work-number="[[$current.data.work]]" 
+                 email="[[$current.data.email]]">
+      </demo-card-2>  
+    </template>
+  </oj-bind-for-each>
 </div>

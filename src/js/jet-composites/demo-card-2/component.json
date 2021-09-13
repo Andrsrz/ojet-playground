@@ -1,0 +1,43 @@
+{
+  "name": "demo-card-2",
+  "version": "1.0.0",
+  "jetVersion": "^10.0.0",
+  "displayName": "A user friendly, translatable name of the component.",
+  "description": "A translatable high-level description for the component.",
+  "properties": {
+    "name": {
+      "description": "The employee's full name.",
+      "displayName": "Name",
+      "type": "string"
+    },
+    "avatar": {
+      "description": "The url of the employee's image.",
+      "displayName": "Avatar",
+      "type": "string"
+    },
+    "workTitle": {
+      "description": "The employee's job title.",
+      "displayName": "Work Title",
+      "type": "string"
+    },
+    "workNumber": {
+      "description": "The employee's work number.",
+      "displayName": "Work Number",
+      "type": "number"
+    },
+    "email": {
+      "description": "The employee's email.",
+      "displayName": "Email",
+      "type": "string"
+    }
+  },
+  "methods": {
+
+  }, 
+  "events": {
+
+  }, 
+  "slots": {
+
+  }
+}
