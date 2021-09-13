@@ -1,0 +1,26 @@
+{
+  "name": "my-dropdown-with-chart",
+  "version": "1.0.0",
+  "jetVersion": "^10.0.0",
+  "displayName": "DropdownChart.",
+  "description": "A drop down selector's value attached to a chart.",
+  "properties": {
+    "chartType": {
+      "description": "Initial value of the chart",
+      "type": "string"
+    }
+  },
+  "methods": {
+    "sayHi" : {
+      "description": "Displays alert saying hi"
+    }
+  }, 
+  "events": {
+ 
+  }, 
+  "slots": {
+    "toolbar": {
+      "description": "Toolbar for working with chart."
+    }
+  }
+}
