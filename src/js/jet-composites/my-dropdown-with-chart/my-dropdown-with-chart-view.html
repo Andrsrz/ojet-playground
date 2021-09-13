@@ -8,7 +8,8 @@
 <oj-select-single id="basicSelect" 
                   style="max-width: 20em;" 
                   data="[[chartTypes]]" 
-                  value="{{val}}">
+                  value="{{val}}"
+                  on-value-changed="[[chartTypeChangeListener]]">
 </oj-select-single>
 <oj-chart id="barChart"
           type="[[val]]"

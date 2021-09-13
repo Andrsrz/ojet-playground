@@ -16,6 +16,11 @@ define(
     function ExampleComponentModel(context) {
       this.sayHi = function (event){
         alert('Hi');
+        console.log(event);
+      };
+
+      this.chartTypeChangeListener = function(event){
+        console.log(event.detail.value);
       };
 
       //At the start of your viewModel constructor

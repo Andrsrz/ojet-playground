@@ -54,13 +54,6 @@ define(['knockout',
         },
       ];
 
-      // Event Handler
-      this.currentChart = ko.observable();
-      this.chartTypeChangeListener = function(event){
-        this.currentChart(event.detail.value);
-        alert('type is now: ' + event.detail.value);
-      }
-
       /**
        * Optional ViewModel method invoked after the View is inserted into the
        * document DOM.  The application can put logic that requires the DOM being
