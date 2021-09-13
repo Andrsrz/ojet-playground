@@ -1,19 +1,19 @@
-<div tabindex="0" role="group" class="demo-card-flip-container"
+<div tabindex="0" role="group" class="demo-card-2-flip-container"
   on-click="[[flipCard]]" on-keypress="[[flipCard]]" :aria-label="[[$properties.name + ' Press Enter for more info.']]">
 
-  <div class="demo-card-front-side oj-flex oj-sm-align-items-center">
+  <div class="demo-card-2-front-side oj-flex oj-sm-align-items-center">
     <div class="oj-flex-item  oj-sm-flex-direction-column">
-      <oj-avatar class="oj-flex-item demo-card-avatar" role="img" size="lg" initials="[[initials]]" src="[[$properties.avatar]]"
+      <oj-avatar class="oj-flex-item demo-card-2-avatar" role="img" size="lg" initials="[[initials]]" src="[[$properties.avatar]]"
         :aria-label="[['Avatar of ' + $properties.name]]">
       </oj-avatar>
-      <div class="oj-flex-item oj-typography-heading-sm oj-typography-semi-bold demo-card-text">
+      <div class="oj-flex-item oj-typography-heading-sm oj-typography-semi-bold demo-card-2-text">
         <oj-bind-text value="[[$properties.name]]"></oj-bind-text>
       </div>
     </div>
   </div>
 
-  <div class="demo-card-back-side oj-flex oj-sm-align-items-center">
-    <div class="demo-card-inner-back-side oj-flex-item  oj-sm-flex-direction-column demo-card-text">
+  <div class="demo-card-2-back-side oj-flex oj-sm-align-items-center">
+    <div class="demo-card-2-inner-back-side oj-flex-item  oj-sm-flex-direction-column demo-card-2-text">
       <div class="oj-flex-item oj-typography-heading-sm oj-typography-semi-bold">
         <oj-bind-text value="[[$properties.name]]"></oj-bind-text>
       </div>

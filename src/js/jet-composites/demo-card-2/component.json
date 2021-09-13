@@ -1,9 +1,9 @@
 {
-  "name": "demo-card",
-  "description": "A card element that can display an avatar or initials on one side and employee information on the other.",
-  "displayName": "Demo Card",
-  "version": "10.0.0",
-  "jetVersion": ">=10.0.0 <11.0.0",
+  "name": "demo-card-2",
+  "version": "1.0.0",
+  "jetVersion": "^10.0.0",
+  "displayName": "A user friendly, translatable name of the component.",
+  "description": "A translatable high-level description for the component.",
   "properties": {
     "name": {
       "description": "The employee's full name.",
@@ -30,5 +30,14 @@
       "displayName": "Email",
       "type": "string"
     }
+  },
+  "methods": {
+
+  }, 
+  "events": {
+
+  }, 
+  "slots": {
+
   }
 }
