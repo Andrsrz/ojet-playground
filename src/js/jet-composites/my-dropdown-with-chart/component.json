@@ -11,7 +11,9 @@
     }
   },
   "methods": {
-
+    "sayHi" : {
+      "description": "Displays alert saying hi"
+    }
   }, 
   "events": {
  
