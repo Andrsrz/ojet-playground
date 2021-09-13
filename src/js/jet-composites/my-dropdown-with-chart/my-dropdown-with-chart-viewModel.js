@@ -14,10 +14,10 @@ define(
     function (ko, componentStrings, Context, ArrayDataProvider) {
     
     function ExampleComponentModel(context) {
-      function sayHi(event){
+      this.sayHi = function (event){
         alert('Hi');
-        element.dispatchEvent(new CustomEvent('sayHi'));
-      }
+      };
+
       //At the start of your viewModel constructor
       var busyContext = Context.getContext(context.element).getBusyContext();
       var options = {"description": "Web Component Startup - Waiting for data"};
